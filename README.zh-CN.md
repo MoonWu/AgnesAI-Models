@@ -23,10 +23,13 @@ Agnes AI 通过统一的 API 网关，为开发者提供 OpenAI 兼容的多模�
 
 | 资源 | URL |
 | --- | --- |
-| 官网 | https://agnes-ai.com/ |
+| 国际站 | https://agnes-ai.com/ |
+| 中国站 | https://agnes-ai.cn/ |
 | 开发者文档 | https://agnes-ai.com/doc/overview |
 | API 平台 | https://platform.agnes-ai.com/ |
 | API Base URL | `https://apihub.agnes-ai.com/v1` |
+
+Agnes AI 提供两个官方站点：[国际站](https://agnes-ai.com/) 和 [中国站](https://agnes-ai.cn/)。请根据所在地区和服务需求选择对应入口。
 
 ## 开发者资源
 
