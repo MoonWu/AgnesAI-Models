@@ -14,8 +14,8 @@ Agnes AI gives developers OpenAI-compatible access to multimodal models for text
 
 | Field | Value |
 | --- | --- |
-| Public documentation version | `2026.06.28` |
-| Last updated | `2026-06-28 00:00 Asia/Singapore` |
+| Public documentation version | `2026.07.30` |
+| Last updated | `2026-07-30 00:00 Asia/Singapore` |
 | Source of truth | Official website and API platform |
 | Change notice | Model availability, rate limits, pricing, and quota rules may change over time. Always confirm production-critical values in the official docs or platform console. |
 
@@ -46,6 +46,7 @@ Agnes AI gives developers OpenAI-compatible access to multimodal models for text
 
 | Model | Type | Endpoint | Highlights |
 | --- | --- | --- | --- |
+| `agnes-2.5-flash` | Text and vision-language | `/v1/chat/completions` | Upgraded coding, agent workflows, tool calling, multi-turn dialogue, reasoning, and image understanding |
 | `agnes-2.0-flash` | Text and vision-language | `/v1/chat/completions` | Reasoning, coding, tool calling, streaming, image understanding, agent workflows |
 | `agnes-image-2.0-flash` | Image generation and editing | `/v1/images/generations` | Text-to-image, image-to-image, URL or Base64 output |
 | `agnes-image-2.1-flash` | Image generation and editing | `/v1/images/generations` | High-density visual generation, image editing, flexible sizes, URL or Base64 output |
@@ -71,7 +72,7 @@ client = OpenAI(
 )
 
 response = client.chat.completions.create(
-    model="agnes-2.0-flash",
+    model="agnes-2.5-flash",
     messages=[
         {"role": "user", "content": "Write a short intro to Agnes AI."}
     ],
@@ -88,7 +89,7 @@ Python examples:
 
 | Example | Purpose |
 | --- | --- |
-| [`examples/python/chat.py`](./examples/python/chat.py) | Streaming chat completion with `agnes-2.0-flash`. |
+| [`examples/python/chat.py`](./examples/python/chat.py) | Streaming chat completion with `agnes-2.5-flash`. |
 | [`examples/python/openai_compatible.py`](./examples/python/openai_compatible.py) | Minimal OpenAI-compatible client configuration. |
 | [`examples/python/image_generation.py`](./examples/python/image_generation.py) | Text-to-image request with `agnes-image-2.1-flash`. |
 | [`examples/python/video_generation.py`](./examples/python/video_generation.py) | Text-to-video task creation and `video_id` polling. |
@@ -175,6 +176,7 @@ Use `video_id` for video result polling. Do not use `task_id` for current video 
 
 - Use `Authorization: Bearer YOUR_API_KEY` for every request.
 - Keep API keys in server-side environment variables. Never expose keys in client-side code or public repositories.
+- `agnes-2.5-flash` is fully available to users with Agnes API access. It is OpenAI-compatible with `agnes-2.0-flash`: the base URL, endpoint, request format, streaming, tool calling, and image URL input stay the same. Current public reference: `512K` context and `65.5K` maximum output. Availability, rate limits, and billing are determined by account and API key permissions.
 - `agnes-2.0-flash` currently supports a `256K` context window and `64K` max output reference limit after the June 2026 rollback from the temporary `1M` context window.
 - Thinking mode, streaming, tool calling, and vision inputs are supported on compatible chat workflows. Check the model-specific docs before enabling advanced parameters in production.
 - For `400` responses, verify required parameters, request body shape, image URL accessibility, and response format placement.
@@ -198,6 +200,7 @@ See the official docs for model-specific parameters, response formats, pricing, 
 
 - https://agnes-ai.com/doc/overview
 - https://agnes-ai.com/doc/agnes-20-flash
+- https://agnes-ai.com/zh-Hans/docs/agnes-25-flash
 - https://agnes-ai.com/doc/agnes-image-20-flash
 - https://agnes-ai.com/doc/agnes-image-21-flash
 - https://agnes-ai.com/doc/agnes-video-v20
