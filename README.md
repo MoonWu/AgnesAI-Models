@@ -23,10 +23,13 @@ Agnes AI gives developers OpenAI-compatible access to multimodal models for text
 
 | Resource | URL |
 | --- | --- |
-| Website | https://agnes-ai.com/ |
+| International site | https://agnes-ai.com/ |
+| China site | https://agnes-ai.cn/ |
 | Developer Docs | https://agnes-ai.com/doc/overview |
 | API Platform | https://platform.agnes-ai.com/ |
 | API Base URL | `https://apihub.agnes-ai.com/v1` |
+
+Agnes AI provides two official sites: the [International site](https://agnes-ai.com/) and the [China site](https://agnes-ai.cn/). Choose the site that matches your region and service needs.
 
 ## Developer Resources
 
