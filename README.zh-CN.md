@@ -14,8 +14,8 @@ Agnes AI 通过统一的 API 网关，为开发者提供 OpenAI 兼容的多模�
 
 | 字段 | 值 |
 | --- | --- |
-| 公共文档版本 | `2026.06.28` |
-| 最后更新 | `2026-06-28 00:00 Asia/Singapore` |
+| 公共文档版本 | `2026.07.30` |
+| 最后更新 | `2026-07-30 00:00 Asia/Singapore` |
 | 信息来源 | 官方网站与 API 平台 |
 | 变更说明 | 模型可用性、速率限制、价格和配额规则可能随时间变化。生产环境使用前，请以官方文档或平台控制台为准。 |
 
@@ -46,6 +46,7 @@ Agnes AI 通过统一的 API 网关，为开发者提供 OpenAI 兼容的多模�
 
 | 模型 | 类型 | 端点 | 亮点 |
 | --- | --- | --- | --- |
+| `agnes-2.5-flash` | 文本与视觉语言 | `/v1/chat/completions` | 升级代码能力、Agent 工作流、工具调用、多轮对话、推理和图像理解 |
 | `agnes-2.0-flash` | 文本与视觉语言 | `/v1/chat/completions` | 推理、代码、工具调用、流式输出、图像理解和 Agent 工作流 |
 | `agnes-image-2.0-flash` | 图像生成与编辑 | `/v1/images/generations` | 文生图、图生图、URL 或 Base64 输出 |
 | `agnes-image-2.1-flash` | 图像生成与编辑 | `/v1/images/generations` | 高密度视觉生成、图像编辑、灵活尺寸、URL 或 Base64 输出 |
@@ -132,6 +133,7 @@ GET https://apihub.agnes-ai.com/agnesapi?video_id=<VIDEO_ID>
 
 - 每次请求都需要使用 `Authorization: Bearer YOUR_API_KEY`。
 - API Key 应保存在服务端环境变量中，不要暴露在客户端代码或公开仓库里。
+- `agnes-2.5-flash` 已全量上线，面向具备 Agnes API 访问权限的用户开放。它与 `agnes-2.0-flash` 保持 OpenAI 兼容：Base URL、端点、请求格式、流式输出、工具调用和图像 URL 输入格式不变。当前公开参考规格为 `512K` 上下文和 `65.5K` 最大输出；可用性、速率限制和计费以账号与 API Key 权限为准。
 - `agnes-2.0-flash` 当前支持 `256K` 上下文窗口和 `64K` 最大输出参考限制，这是 2026 年 6 月从临时 `1M` 上下文窗口回滚后的状态。
 - Thinking mode、流式输出、工具调用和视觉输入可用于兼容的 chat 工作流。生产环境启用高级参数前，请先查看对应模型文档。
 - 如遇 `400` 响应，请检查必填参数、请求体结构、图片 URL 可访问性和 response format 的位置。
@@ -155,6 +157,7 @@ export AGNES_API_KEY="your_api_key_here"
 
 - https://agnes-ai.com/doc/overview
 - https://agnes-ai.com/doc/agnes-20-flash
+- https://agnes-ai.com/zh-Hans/docs/agnes-25-flash
 - https://agnes-ai.com/doc/agnes-image-20-flash
 - https://agnes-ai.com/doc/agnes-image-21-flash
 - https://agnes-ai.com/doc/agnes-video-v20
