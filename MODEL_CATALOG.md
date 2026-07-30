@@ -6,8 +6,8 @@ This catalog summarizes the public Agnes AI model families and the recommended A
 
 | Field | Value |
 | --- | --- |
-| Catalog version | `2026.06.28` |
-| Last updated | `2026-06-28 00:00 Asia/Singapore` |
+| Catalog version | `2026.07.30` |
+| Last updated | `2026-07-30 00:00 Asia/Singapore` |
 | Scope | Public model, endpoint, quota, and troubleshooting reference |
 | Latest rate-limit update | Video model RPM updated on `2026-06-28` |
 | Change notice | Rate limits, subscription quotas, model parameters, and availability may change. Treat the values in this catalog as current reference values, not permanent contractual limits. |
@@ -30,6 +30,7 @@ Authorization: Bearer YOUR_API_KEY
 | Model | Endpoint | Capabilities | Suggested Use Cases |
 | --- | --- | --- | --- |
 | `agnes-1.5-flash` | `POST /v1/chat/completions` | Fast chat completions, text generation, image URL input, low-latency inference | Realtime assistants, content generation, summarization, simple multimodal tasks |
+| `agnes-2.5-flash` | `POST /v1/chat/completions` | Chat, streaming, tool calling, coding, reasoning, multi-turn dialogue, image understanding, agent workflows | Coding agents, complex developer workflows, tool orchestration, multimodal assistants |
 | `agnes-2.0-flash` | `POST /v1/chat/completions` | Chat, streaming, tool calling, coding, reasoning, image understanding, agent workflows | Developer agents, customer support, coding tasks, workflow automation, multimodal assistants |
 
 ### Text Model Notes
@@ -37,6 +38,7 @@ Authorization: Bearer YOUR_API_KEY
 | Model | Current Reference Specs | Notes |
 | --- | --- | --- |
 | `agnes-1.5-flash` | `256K` context, `64K` max output reference limit | Recommended for high-throughput chat and low-latency content workflows. |
+| `agnes-2.5-flash` | `512K` context, `65.5K` max output reference limit | Fully available to users with Agnes API access. OpenAI-compatible with `agnes-2.0-flash`; use the same base URL, endpoint, message format, streaming, tool calling, and image URL input. Availability, rate limits, and billing depend on account and API key permissions. |
 | `agnes-2.0-flash` | `256K` context, `64K` max output reference limit | The temporary `1M` context window was rolled back in June 2026 for stability. Use this model for coding, reasoning, agents, vision input, streaming, and tool calling. |
 
 ## Image Models
@@ -139,7 +141,8 @@ Recommended model selection:
 | Workflow | Recommended Model |
 | --- | --- |
 | General chat and content generation | `agnes-1.5-flash` |
-| Coding, reasoning, tool calling, and agent workflows | `agnes-2.0-flash` |
+| Coding, reasoning, tool calling, and agent workflows | `agnes-2.5-flash` |
+| Existing integrations needing a previous-generation compatibility fallback | `agnes-2.0-flash` |
 | Text-to-image and image editing | `agnes-image-2.1-flash` |
 | Fast image generation | `agnes-image-2.0-flash` |
 | Text-to-video and image-to-video | `agnes-video-v2.0` |
@@ -163,6 +166,7 @@ Recommended model selection:
 | --- | --- |
 | `agnes-1.5-flash` | https://agnes-ai.com/doc/agnes-15-flash |
 | `agnes-2.0-flash` | https://agnes-ai.com/doc/agnes-20-flash |
+| `agnes-2.5-flash` | https://agnes-ai.com/zh-Hans/docs/agnes-25-flash |
 | `agnes-image-2.0-flash` | https://agnes-ai.com/doc/agnes-image-20-flash |
 | `agnes-image-2.1-flash` | https://agnes-ai.com/doc/agnes-image-21-flash |
 | `agnes-video-v2.0` | https://agnes-ai.com/doc/agnes-video-v20 |
