@@ -4,6 +4,14 @@ All notable public documentation, model catalog, quota, and integration updates 
 
 This changelog is a public reference. Model availability, RPM limits, subscription quotas, and pricing may change over time. Always confirm production-critical values in the official Agnes AI platform console.
 
+## 2026-07-30
+
+### Added
+
+- Added `agnes-2.5-flash` to the public model catalog and bilingual README.
+- Documented full availability for users with Agnes API access, OpenAI-compatible migration from `agnes-2.0-flash`, and the official model documentation link.
+- Added current public reference specifications: `512K` context window and `65.5K` maximum output.
+
 ## 2026-06-29
 
 ### Added
